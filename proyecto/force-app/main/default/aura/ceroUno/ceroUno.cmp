@@ -1,0 +1,10 @@
+<aura:component controller="Apex"><!--  -->
+    <!-- <aura:handler event="c.Evento" action="{!c.manejarEvento}"/> -->
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.myAction}"/> -->
+    <aura:handler event="c:comenzarGrabar" action="{!c.activarGrabacion}"/>
+    <!-- <aura:handler event="c:Evento" action="{!c.myAction}"/> -->
+    <input type="button" value="0" onclick="{!c.manejarEvento0}"/><span>      </span>
+    <input type="button" value="1" onclick="{!c.manejarEvento1}"/>
+    <aura:attribute name="egrabar" type="Boolean" default="true"/>
+    <aura:attribute name="secuencia" type="String" default=""/>
+</aura:component>	

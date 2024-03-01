@@ -1,0 +1,47 @@
+<aura:component controller="Apex">
+    <aura:handler event="c:Evento" action="{!c.manejarEvento}"/>
+    <input type="button" value="Grabar" onclick="{!c.comenzarGrabar}"/>
+    <input type="button" value="Stop" onclick="{!c.pararGrabar}"/>
+    <input type="button" value="Play" onclick="{!c.grabacion}"/>
+    <br/>
+    <input type="button" value="Save..." onclick="{!c.guardar}"/>
+    <input type="button" value="Clear" onclick="{!c.borrarPantalla}"/>
+    <br/>
+    <br/>
+    <aura:attribute name="cadenadelaGrabacion" type="String" default="Secuencia..."/>
+    <h2>{!v.cadenadelaGrabacion}</h2>
+    <aura:attribute name="cadenaGrabacion" type="String[]" default="[]"/>
+    <h1>Secuencias de Grabar:</h1>
+    <ul>
+        <aura:iteration items="{!v.cadenaGrabacion}" var="secuencia">
+            <li>{!secuencia}</li>
+            <aura:if isTrue="{!secuencia == ','}">
+                <h2>Error: Grabacion Nula!!!!!!!!!</h2><br/>
+            </aura:if>
+        </aura:iteration>
+    </ul>
+    <!-- INIT -->
+    <aura:attribute name="cadenaInicial" type="String[]" default="[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <h1>Secuencias:</h1>
+    <ul>
+        <aura:iteration items="{!v.cadenaInicial}" var="nombre">
+            <p>{!nombre}</p>
+        </aura:iteration>
+    </ul>
+    <br/>
+    <br/>
+    <!-- <aura:attribute name="secuencias" type="Account[]"/> -->
+	<!-- <table> 
+		<tbody>
+			<tr>
+				<th>Cadena:</th>
+			</tr>
+			<aura:iteration items="{!v.secuencias}" var="secuencia">
+				<tr>
+					<td>{!secuencia.Name}</td>
+				</tr>
+			</aura:iteration>
+		</tbody>
+	</table> -->
+</aura:component>	
