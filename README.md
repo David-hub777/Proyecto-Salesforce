@@ -2,5 +2,5 @@
 
 Crear componentes web Lightning
 
-David Molinos Gracia
+David Molinos Gracia - 
 Alejandro Esteban Gil
